@@ -1,0 +1,4 @@
+# A2 - BIM Analyst group 41
+## A2a
+Group: 41
+Confidence in Python: 0

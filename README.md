@@ -1,6 +1,6 @@
 # BLD_26_41
 
-## Assignment A1
+## A1 - BIM Analyst
 #### Group number: 41; Focus area: Build
 In this section we briefly explained an issue encountered encountered on the 26-03 Client Report, located on pages 15-18 (Geotech, Current foundation & Proposed building).
 ### Identified issues

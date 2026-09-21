@@ -1,11 +1,9 @@
-# BLD_26_41
-
-## A1 - BIM Analyst
-#### Group number: 41; Focus area: Build
+# A1 - BIM Analyst
+### Group number: 41; Focus area: Build
 In this section we briefly explained an issue encountered encountered on the 26-03 Client Report, located on pages 15-18 (Geotech, Current foundation & Proposed building).
-### Identified issues
+## Identified issues
 The proposed desgin of building 308 centers on demolishing the three existing auditoriums in the north section of Building 308, along with their associated floor slabs and load-bearing walls to build a new 3 story column supported structure. The problem here is that the new structure will introduce new concentrated vertical loads at different location points that must be transferred to the original foundation, which already have a notable utilization levels (from 91.6% to 99.4% utilization in foundations type B* and F).
 The new design proposed to position these new columns far away from the existing foundation elements, 
 however a defined and conrete connection mechanism is still missing, and the spatial alignment between the new concentrated loads and the existing distributed foundation system remains unsolved. The Geotechnical Assessment explicitly acknowledges this limitation, stating that "finding a way to connect the old foundations to the new ones is still an important concern" (page 27, section 6.3.4). Additionally, modifications or replacement of the existing foundations would likely be technically complex and economically demanding.  
-### Possible solutions
+## Possible solutions
 Reposition the primary new columns to align with type D, E and C foundations rather than type F and B*. Additionally, install micropiles only in zones where redistribution alone is insufficient or beneath columns carrying maximum loads. This hybrid solution can achieve load reduction through redistribution with an additional backup strategy of selective deep piling. 

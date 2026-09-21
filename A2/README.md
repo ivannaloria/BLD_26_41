@@ -1,22 +1,24 @@
 # A2 - BIM Analyst group 41
-## A2a
+## A2a: Coding confidence
 **Group: 41**
 
-**Confidence in python: 0**
+**Confidence in python: 2 - Neutral**
 
 **Focus Area: Build analyst**
 
-## A2b
+## A2b: Identify Claim
 **Selected building:** #2604
 
 **Claim / issue to check:**
-Evaluate each column and wall that cannot sustain new loads to decide if it should be reinforced in-place or replaced to find the best option that balances structural performance, budget, and environmental impact. 
-
+Evaluate each column and wall that cannot sustain new loads to decide if it should be reinforced in-place or removed and replaced to find the best option that balances structural performance, budget, and environmental impact. 
 
 **Description of the claim:**
-The report for building #2604 states that structural reuse is maximised to limit additional material consumption and reduce embodied carbon. 
+The report for building #2604 states that structural reuse is maximised to limit additional material consumption and reduce embodied carbon, with a CO₂ limit of 40 kg CO₂-eq/m²/year to achieve a DGNB Gold certification. The proposed project of the report involves removing non-load-bearing walls and adding new floors, which create additional loads on existing structural elements. We want to verify, for each structural element that cannot sustain the new loads, whether reinforcing it in-place or replacing it represents the best outcome that meets the sustainability target, structural requirements, and project bugdet simulataneously.
 
-
-provides a cost estimate for various building elements (e.g., windows) including quantities for each building element. We want to verify whether the claimed quantities of each element in the facade and their stated costs match what can be extracted from the actual BIM model (IFC). This allows us to validate whether the reported building cost is realistic and consistent with the projected BIM model.
-
+## A2c: Use Case
+**How would you check this claim?**
+**When would this claim need to be checked?**
+**What information does this claim rely on?**
+**What phase?**
+**What BIM purpose is required?**
 

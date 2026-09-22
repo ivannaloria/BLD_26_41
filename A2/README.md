@@ -17,8 +17,14 @@ The report for building #2604 states that structural reuse is maximised to limit
 
 ## A2c: Use Case
 **How would you check this claim?**
+We would check this claim by first analyzing the strcutural data from the Ifc model, identifying all columns and walls. Then we would calculate the new loads and for each inadequate element, create 2 scenarios: reinforce in-place or remove and replace. We would calculate the demolition volume, disposal, labor and material cost, and the embodied carbon. Out of these results, we would create a decision matrix to choose the best outcome for the building´s goals. 
+
 **When would this claim need to be checked?**
+This claim would need to be checked in the **early design phase**, when identifying elements that can be problematic.
+
 **What information does this claim rely on?**
+*- Structural data:* Existing columns and beams (dimensions, current capacity and reinforcement details).
+*- Load data:*
 **What phase?**
 **What BIM purpose is required?**
 

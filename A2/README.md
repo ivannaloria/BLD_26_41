@@ -51,11 +51,11 @@ Our idea is to develop a tool that automatically calculates the cost of new colu
 
 The value of the tool can be measured directly in monetary value, as the cost estimation can help avoid scenarios in which calculations could be made incorrectly or the building was overdesigned. 
 
-**Cost accuracy:** Provides precise cost calculations based on the actual BIM model, rather than estimates. 
+**- Cost accuracy:** Provides precise cost calculations based on the actual BIM model, rather than estimates. 
 
-**Budget verification:** Confirms structural costs align with the budget constraint early in the design phase.
+**- Budget verification:** Confirms structural costs align with the budget constraint early in the design phase.
 
-**Efficiency:** Automates cost calculation that would otherwise require manual measurements and estimation.
+**- Efficiency:** Automates cost calculation that would otherwise require manual measurements and estimation.
 
 
 

@@ -24,8 +24,11 @@ This claim would need to be checked in the **early design phase**, when identify
 
 **What information does this claim rely on?**
 *- Structural data:* Existing columns and beams (dimensions, current capacity and reinforcement details).
-*- Load data:* New floor loads, wall removal impacts, new live loads,¡.
+
+*- Load data:* New floor loads, wall removal impacts, new live loads.
+
 *- Cost data:* Reinforcement unit costs, demolition unit costs, disposal fees, new material costs, labor rates.
+
 *- Material Data:* Embodied carbon per material type, or recycled content availability. 
 
 **What phase?**

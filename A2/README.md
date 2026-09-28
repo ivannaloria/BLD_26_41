@@ -29,5 +29,6 @@ This claim would need to be checked in the **early design phase**, when identify
 *- Material Data:* Embodied carbon per material type, or recycled content availability. 
 
 **What phase?**
+Early design phase, before the final structural intervention strategy is selected.
 **What BIM purpose is required?**
 

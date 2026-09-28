@@ -10,28 +10,50 @@
 **Selected building:** #2604
 
 **Claim / issue to check:**
-Evaluate each column and wall that cannot sustain new loads to decide if it should be reinforced in-place or removed and replaced to find the best option that balances structural performance, budget, and environmental impact. 
+Cost estimation of new columns and load-bearing walls for the structural design. 
 
 **Description of the claim:**
-The report for building #2604 states that structural reuse is maximised to limit additional material consumption and reduce embodied carbon, with a CO₂ limit of 40 kg CO₂-eq/m²/year to achieve a DGNB Gold certification. The proposed project of the report involves removing non-load-bearing walls and adding new floors, which create additional loads on existing structural elements. We want to verify, for each structural element that cannot sustain the new loads, whether reinforcing it in-place or replacing it represents the best outcome that meets the sustainability target, structural requirements, and project bugdet simulataneously.
+The report for building #2604 involves removing non-load-bearing walls and adding new floors, which require new or modified columns and load-bearing walls. We want to extract and calculate the actual cost of these new structural elements from the BIM model and to later verify the project budget of 35,000 dkk/m².
 
 ## A2c: Use Case
 **How would you check this claim?**
-We would check this claim by first analyzing the strcutural data from the Ifc model, identifying all columns and walls. Then we would calculate the new loads and for each inadequate element, create 2 scenarios: reinforce in-place or remove and replace. We would calculate the demolition volume, disposal, labor and material cost, and the embodied carbon. Out of these results, we would create a decision matrix to choose the best outcome for the building´s goals. 
+We would check this claim by first analyzing the strcutural data from the Ifc model, and identifying new columns and load-bearing walls. We would extract their dimensions, material types, and quantities. 
 
 **When would this claim need to be checked?**
-This claim would need to be checked in the **early design phase**, when identifying elements that can be problematic to avoid mid-construction changes. 
+This claim would need to be checked in the **pre-construction phase**, after an early design for the building has been submitted and cost determination is still in progress. 
 
 **What information does this claim rely on?**
-*- Structural data:* Existing columns and beams (dimensions, current capacity and reinforcement details).
+*- Structural data (from IFC model):* Unit cost data for new columns and load-bearing walls (dimensions, material type, quantities, design details).
 
-*- Load data:* New floor loads, wall removal impacts, new live loads.
-
-*- Cost data:* Reinforcement unit costs, demolition unit costs, disposal fees, new material costs, labor rates.
-
-*- Material Data:* Embodied carbon per material type, or recycled content availability. 
+*- Cost data (from product datasheet):* Unit costs data is needed to determine the price for each new  element added.
 
 **What phase?**
-Early design phase, before the final structural intervention strategy is selected.
+Pre-construction and design phase, before a final budget approval; detail costs estimates are essential to ensure the project remains within budget. It can also be used in the planning phase for an early cost analysis and estimates. 
+
 **What BIM purpose is required?**
+The primary BIM purpose is **Quantity Take-off and Cost Estimation** to extract column and wall dimensions from the IFC model and calculate total construction cost. A secondary purpose of the tool would be to communicate (to the project manager, contractors, or clients) the comparison of the generated costs against the project building constraint. 
+
+## A2d: Scope the Use Code
+BPMN DIAGRAM
+
+## A2e: Tool idea
+Our idea is to develop a tool that automatically calculates the cost of new columns and load-bearing walls from an IFC model. The tool extracts structural elements, calculates their dimensions and quantities, and applies unit costs to determine total material expenses. The tool generates a cost report for structural elements, enabling verification against the project budget of 35,000 dkk/m².
+
+**Business and societal value**
+The value of the tool can be measured directly in monetary value, as the cost estimation can help avoid scenarios in which calculations could be made incorrectly or the building was overdesigned. 
+
+**Cost accuracy:** Provides precise cost calculations based on the actual BIM model, rather than estimates. 
+
+**Budget verification:** Confirms structural costs align with the budget constraint early in the design phase.
+
+**Efficiency:** Automates cost calculation that would otherwise require manual measurements and estimation.
+
+
+
+
+
+
+
+
+
 

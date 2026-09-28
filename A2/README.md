@@ -23,6 +23,7 @@ We would check this claim by first analyzing the strcutural data from the Ifc mo
 This claim would need to be checked in the **pre-construction phase**, after an early design for the building has been submitted and cost determination is still in progress. 
 
 **What information does this claim rely on?**
+
 *- Structural data (from IFC model):* Unit cost data for new columns and load-bearing walls (dimensions, material type, quantities, design details).
 
 *- Cost data (from product datasheet):* Unit costs data is needed to determine the price for each new  element added.

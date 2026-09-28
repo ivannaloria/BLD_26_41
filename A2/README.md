@@ -20,11 +20,14 @@ The report for building #2604 states that structural reuse is maximised to limit
 We would check this claim by first analyzing the strcutural data from the Ifc model, identifying all columns and walls. Then we would calculate the new loads and for each inadequate element, create 2 scenarios: reinforce in-place or remove and replace. We would calculate the demolition volume, disposal, labor and material cost, and the embodied carbon. Out of these results, we would create a decision matrix to choose the best outcome for the building´s goals. 
 
 **When would this claim need to be checked?**
-This claim would need to be checked in the **early design phase**, when identifying elements that can be problematic.
+This claim would need to be checked in the **early design phase**, when identifying elements that can be problematic to avoid mid-construction changes. 
 
 **What information does this claim rely on?**
 *- Structural data:* Existing columns and beams (dimensions, current capacity and reinforcement details).
-*- Load data:*
+*- Load data:* New floor loads, wall removal impacts, new live loads,¡.
+*- Cost data:* Reinforcement unit costs, demolition unit costs, disposal fees, new material costs, labor rates.
+*- Material Data:* Embodied carbon per material type, or recycled content availability. 
+
 **What phase?**
 **What BIM purpose is required?**
 

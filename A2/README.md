@@ -41,7 +41,7 @@ Pre-construction and design phase, before a final budget approval; detail costs 
 The primary BIM purpose is **Quantity Take-off and Cost Estimation** to extract column and wall dimensions from the IFC model and calculate total construction cost. A secondary purpose of the tool would be to communicate (to the project manager, contractors, or clients) the comparison of the generated costs against the project building constraint. 
 
 ## A2d: Scope the Use Code
-![BPMN diagram](A2d_BPMN.svg)
+![BPMN diagram](diagram.svg)
 
 ## A2e: Tool idea
 

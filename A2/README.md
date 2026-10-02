@@ -28,7 +28,7 @@ This claim would need to be checked in the **pre-construction phase**, after an 
 
 **What information does this claim rely on?**
 
-*- Structural data (from IFC model):* Unit cost data for new columns and load-bearing walls (dimensions, material type, quantities, design details).
+*- Structural data (from IFC model):* new columns and load-bearing walls, including dimensions, material type, quantities, and relevant design properties.
 
 *- Cost data (from product datasheet):* Unit costs data is needed to determine the price for each new  element added.
 
@@ -41,7 +41,7 @@ Pre-construction and design phase, before a final budget approval; detail costs 
 The primary BIM purpose is **Quantity Take-off and Cost Estimation** to extract column and wall dimensions from the IFC model and calculate total construction cost. A secondary purpose of the tool would be to communicate (to the project manager, contractors, or clients) the comparison of the generated costs against the project building constraint. 
 
 ## A2d: Scope the Use Code
-BPMN DIAGRAM
+![BPMN diagram](A2d_BPMN.svg)
 
 ## A2e: Tool idea
 

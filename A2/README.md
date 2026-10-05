@@ -115,7 +115,8 @@ columns = model.by_type("IfcColumn")
 ```
 ## A2g: Identify appropriate software license
 
-**License:** GNU General Public License v3.0 (GPL-3.0)
+**License:** GNU General Public License v3.0 **(GPL-3.0)**
+
 
 
 

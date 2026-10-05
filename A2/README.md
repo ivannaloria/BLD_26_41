@@ -15,12 +15,12 @@ Cost estimation of new columns for the structural design.
 
 **Description of the claim:**
 
-The report for building #2604 involves removing non-load-bearing walls and adding new floors, which require new or modified columns. We want to extract and calculate the actual cost of these new structural elements from the BIM model and to later verify the project budget of 35,000 dkk/m².
+The report for building #2604 involves removing non-load-bearing walls and adding new floors, which require new or modified columns. We want to extract and calculate the actual cost of these new structural elements from the BIM model and determine what percentage of the project budget of 35,000 dkk/m² they represent. 
 
 ## A2c: Use Case
 **How would you check this claim?**
 
-We would check this claim by analysing the structural columns in the IFC model. The user will be able to select one or more existing columns that are considered for replacement. The tool will extract the relevant information for the selected columns, such as dimensions, geometry, material type, and quantities, and combine this information with external cost data to estimate the cost of replacing them. 
+We would check this claim by analysing the structural columns in the IFC model. The user will be able to select the existing columns that need to be modified or replaced, as well as the new columns required for the added floors. The tool will extract the relevant information for the selected columns, such as dimensions, geometry, material type, and quantities, and combine this information with external cost data to estimate the cost of replacing them. The tool will also extract the floor area from the model to calculate the total project budget based on 35,000 DKK/m². Finally, the structural cost will be divided by the total budget to show what percentage of the project budget the structural elements represent.
 
 **When would this claim need to be checked?**
 
@@ -30,7 +30,9 @@ This claim would need to be checked in the **pre-construction phase**, after an 
 
 *- Structural data (from IFC model):* new columns, including dimensions, material type, quantities, and relevant design properties.
 
-*- Cost data (from product datasheet):* Unit costs data is needed to determine the price for each new  element added.
+*- Cost data (from product datasheet):* Unit costs data is needed to determine the price for each new  element added, considering a project budget of  35,000 DKK/m². 
+
+*- Area data (from IFC model):* Floor area to calculate the total budget. 
 
 **What phase?**
 
@@ -38,14 +40,15 @@ Pre-construction and design phase, before a final budget approval; detail costs 
 
 **What BIM purpose is required?**
 
-The primary BIM purpose is **Quantity Take-off and Cost Estimation** to extract column dimensions from the IFC model and calculate total construction cost. A secondary purpose of the tool would be to communicate (to the project manager, contractors, or clients) the comparison of the generated costs against the project building constraint. 
+The primary BIM purposes are **Gather and Analyse.** The tool gathers quantities from the IFC model of selected columns by the user, as well as the building's floor area. It then analyses this information with unit cost data to estimate the strucutral cost and calculate what percentage of the total budget they represent.
+A secondary purpose of the tool would be to **Communicate** (to the project manager, contractors, or clients) how much of the budget is assigned to the selected structural elements. 
 
 ## A2d: Scope the Use Code
 ![BPMN diagram](diagram.svg)
 
 ## A2e: Tool idea
 
-Our idea is to develop a tool that automatically calculates the cost of new columns from an IFC model. The tool extracts structural elements, calculates their dimensions and quantities, and applies unit costs to determine total material expenses. The tool generates a cost report for structural elements, enabling verification against the project budget of 35,000 dkk/m².
+Our idea is to develop a tool that automatically calculates the cost of columns from an IFC model. The tool extracts structural elements, calculates their dimensions and quantities, and applies unit costs to determine total material expenses. The tool generates a cost report for structural elements, enabling verification against the project budget of 35,000 dkk/m².
 
 **Business and societal value**
 

@@ -63,17 +63,17 @@ The value of the tool can be measured directly in monetary value, as the cost es
 
 To perform the cost estimation, two IFC models will be used: one representing the **existing building** and one representing the **proposed design**.
 
-The tool needs to compare both models in order to identify the new columns and load-bearing walls introduced in the proposed design. Once the new structural elements have been identified, the information required to calculate their material quantities and costs will be extracted.
+The tool needs to compare both models in order to identify the new columns introduced in the proposed design. Once the new structural elements have been identified, the information required to calculate their material quantities and costs will be extracted.
 
 The following information is required:
 
-*- Element type:* To identify columns (`IfcColumn`) and walls (`IfcWall`).
+*- Element type:* To identify columns (`IfcColumn`).
 
 *- Element identification:* To compare structural elements between the existing and proposed IFC models.
 
 *- Dimensions and geometry:* To determine the size of each new structural element.
 
-*- Material type:* To identify the material used for each column or load-bearing wall.
+*- Material type:* To identify the material used for each column.
 
 *- Material quantity / volume:* To calculate the amount of material required for each new structural element.
 

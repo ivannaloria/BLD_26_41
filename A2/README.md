@@ -11,7 +11,7 @@
 
 **Claim / issue to check:**
 
-Cost estimation of new columns and load-bearing walls for the structural design. 
+Cost estimation of new columns for the structural design. 
 
 **Description of the claim:**
 
@@ -38,14 +38,14 @@ Pre-construction and design phase, before a final budget approval; detail costs 
 
 **What BIM purpose is required?**
 
-The primary BIM purpose is **Quantity Take-off and Cost Estimation** to extract column and wall dimensions from the IFC model and calculate total construction cost. A secondary purpose of the tool would be to communicate (to the project manager, contractors, or clients) the comparison of the generated costs against the project building constraint. 
+The primary BIM purpose is **Quantity Take-off and Cost Estimation** to extract column dimensions from the IFC model and calculate total construction cost. A secondary purpose of the tool would be to communicate (to the project manager, contractors, or clients) the comparison of the generated costs against the project building constraint. 
 
 ## A2d: Scope the Use Code
 ![BPMN diagram](diagram.svg)
 
 ## A2e: Tool idea
 
-Our idea is to develop a tool that automatically calculates the cost of new columns and load-bearing walls from an IFC model. The tool extracts structural elements, calculates their dimensions and quantities, and applies unit costs to determine total material expenses. The tool generates a cost report for structural elements, enabling verification against the project budget of 35,000 dkk/m².
+Our idea is to develop a tool that automatically calculates the cost of new columns from an IFC model. The tool extracts structural elements, calculates their dimensions and quantities, and applies unit costs to determine total material expenses. The tool generates a cost report for structural elements, enabling verification against the project budget of 35,000 dkk/m².
 
 **Business and societal value**
 

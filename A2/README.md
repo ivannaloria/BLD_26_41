@@ -112,7 +112,7 @@ Partially. We know that IfcOpenShell can be used to retrieve the structural colu
 
 ```python
 columns = model.by_type("IfcColumn")
-
+```
 ## A2g: Identify appropriate software license
 
 **License:** GNU General Public License v3.0 (GPL-3.0)

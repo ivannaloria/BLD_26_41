@@ -20,7 +20,7 @@ The report for building #2604 involves removing non-load-bearing walls and addin
 ## A2c: Use Case
 **How would you check this claim?**
 
-We would check this claim by first analyzing the strcutural data from the Ifc model, and identifying new columns. We would extract their dimensions, material types, and quantities. 
+We would check this claim by analysing the structural columns in the IFC model. The user will be able to select one or more existing columns that are considered for replacement. The tool will extract the relevant information for the selected columns, such as dimensions, geometry, material type, and quantities, and combine this information with external cost data to estimate the cost of replacing them. 
 
 **When would this claim need to be checked?**
 
@@ -61,23 +61,25 @@ The value of the tool can be measured directly in monetary value, as the cost es
 
 **What information do we need to extract from the model?**
 
-To perform the cost estimation, two IFC models will be used: one representing the **existing building** and one representing the **proposed design**.
+To perform the cost estimation, the tool needs to access the structural columns contained in the IFC model. The user will select one or more existing columns that are considered for replacement.
 
-The tool needs to compare both models in order to identify the new columns introduced in the proposed design. Once the new structural elements have been identified, the information required to calculate their material quantities and costs will be extracted.
+For each selected column, the tool will extract the information required to determine its quantities and calculate the cost of the proposed replacement.
 
 The following information is required:
 
-*- Element type:* To identify columns (`IfcColumn`).
+*- Element type:* To identify structural columns (`IfcColumn`).
 
-*- Element identification:* To compare structural elements between the existing and proposed IFC models.
+*- Element identification:* To identify each individual column and allow the user to select the columns considered for replacement.
 
-*- Dimensions and geometry:* To determine the size of each new structural element.
+*- Dimensions and geometry:* To determine the size and geometry of each selected column.
 
-*- Material type:* To identify the material used for each column.
+*- Material type:* To identify the material associated with each column.
 
-*- Material quantity / volume:* To calculate the amount of material required for each new structural element.
+*- Material quantity / volume:* To determine the amount of material required for the selected columns.
 
-In addition to the information extracted from the IFC models, **external unit cost data** is required to assign a material cost to each new structural element.
+*- Replacement information:* To define the characteristics of the proposed replacement column, such as its dimensions and material type.
+
+In addition to the information extracted from the IFC model, **external unit cost data** is required to calculate the cost of replacing the selected columns.
 
 **Where is this information in IFC?** (to be confirmed)
 
@@ -93,22 +95,20 @@ The **unit cost data is external information** and will therefore not be extract
 
 **Is it in the model?**
 
-Two IFC models are available for the analysis: the **existing building model** and the **proposed building model**.
+The structural columns required for the analysis are available in the IFC model. However, the presence and consistency of the required information, particularly dimensions, material information, and volume, will need to be checked.
 
-The presence and consistency of the required information, particularly material and volume, will need to be checked in both models.
+The tool will retrieve the available columns from the IFC model and allow the user to select the columns that are considered for replacement.
 
-The relevant structural elements from the two models will be compared to identify the new columns. The exact comparison method will depend on the consistency of element identifiers and properties between the two IFC models.
+The information describing the proposed replacement, such as the new material or dimensions, will need to be provided by the user or obtained from the proposed design model, depending on the final implementation of the tool.
 
-The unit cost data is not expected to be contained in the IFC models and will therefore be provided separately.
+The unit cost data is not expected to be contained in the IFC model and will therefore be obtained separately from an external cost database, such as Molio Prisdata.
 
 **Do you know how to get it in IfcOpenShell?**
 
-Partially. We know that IfcOpenShell can be used to retrieve the relevant IFC elements from both models. For example:
+Partially. We know that IfcOpenShell can be used to retrieve the structural columns from an IFC model. For example:
 
 ```python
-existing_columns = existing_model.by_type("IfcColumn")
-
-proposed_columns = proposed_model.by_type("IfcColumn")
+columns = model.by_type("IfcColumn")
 
 
 

@@ -15,12 +15,12 @@ Cost estimation of new columns and load-bearing walls for the structural design.
 
 **Description of the claim:**
 
-The report for building #2604 involves removing non-load-bearing walls and adding new floors, which require new or modified columns and load-bearing walls. We want to extract and calculate the actual cost of these new structural elements from the BIM model and to later verify the project budget of 35,000 dkk/m².
+The report for building #2604 involves removing non-load-bearing walls and adding new floors, which require new or modified columns. We want to extract and calculate the actual cost of these new structural elements from the BIM model and to later verify the project budget of 35,000 dkk/m².
 
 ## A2c: Use Case
 **How would you check this claim?**
 
-We would check this claim by first analyzing the strcutural data from the Ifc model, and identifying new columns and load-bearing walls. We would extract their dimensions, material types, and quantities. 
+We would check this claim by first analyzing the strcutural data from the Ifc model, and identifying new columns. We would extract their dimensions, material types, and quantities. 
 
 **When would this claim need to be checked?**
 
@@ -28,7 +28,7 @@ This claim would need to be checked in the **pre-construction phase**, after an 
 
 **What information does this claim rely on?**
 
-*- Structural data (from IFC model):* new columns and load-bearing walls, including dimensions, material type, quantities, and relevant design properties.
+*- Structural data (from IFC model):* new columns, including dimensions, material type, quantities, and relevant design properties.
 
 *- Cost data (from product datasheet):* Unit costs data is needed to determine the price for each new  element added.
 
@@ -71,8 +71,6 @@ The following information is required:
 
 *- Element identification:* To compare structural elements between the existing and proposed IFC models.
 
-*- Load-bearing property:* To distinguish load-bearing walls from non-load-bearing walls.
-
 *- Dimensions and geometry:* To determine the size of each new structural element.
 
 *- Material type:* To identify the material used for each column or load-bearing wall.
@@ -83,11 +81,9 @@ In addition to the information extracted from the IFC models, **external unit co
 
 **Where is this information in IFC?** (to be confirmed)
 
-Columns can be identified using `IfcColumn`, while walls can be identified using `IfcWall`.
+Columns can be identified using `IfcColumn`.
 
 Each IFC element contains identification information, such as `GlobalId`, which can be used as part of the comparison between the existing and proposed models.
-
-The load-bearing property of walls can be obtained from the associated property sets when this information is available in the IFC model.
 
 Material information can be obtained through the material associations of the elements, for example through `IfcRelAssociatesMaterial`.
 
@@ -99,9 +95,9 @@ The **unit cost data is external information** and will therefore not be extract
 
 Two IFC models are available for the analysis: the **existing building model** and the **proposed building model**.
 
-The presence and consistency of the required information, particularly material, volume and load-bearing properties, will need to be checked in both models.
+The presence and consistency of the required information, particularly material and volume, will need to be checked in both models.
 
-The relevant structural elements from the two models will be compared to identify the new columns and load-bearing walls. The exact comparison method will depend on the consistency of element identifiers and properties between the two IFC models.
+The relevant structural elements from the two models will be compared to identify the new columns. The exact comparison method will depend on the consistency of element identifiers and properties between the two IFC models.
 
 The unit cost data is not expected to be contained in the IFC models and will therefore be provided separately.
 
@@ -111,10 +107,8 @@ Partially. We know that IfcOpenShell can be used to retrieve the relevant IFC el
 
 ```python
 existing_columns = existing_model.by_type("IfcColumn")
-existing_walls = existing_model.by_type("IfcWall")
 
 proposed_columns = proposed_model.by_type("IfcColumn")
-proposed_walls = proposed_model.by_type("IfcWall")
 
 
 

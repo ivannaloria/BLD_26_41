@@ -11,7 +11,7 @@
 
 **Claim / issue to check:**
 
-Cost estimation of new columns for the structural design. 
+Cost estimation of new columns for the structural design.
 
 **Description of the claim:**
 

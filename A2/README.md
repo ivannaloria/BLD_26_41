@@ -44,7 +44,7 @@ The primary BIM purposes are **Gather and Analyse.** The tool gathers column typ
 A secondary purpose of the tool would be to **Communicate** (to the project manager, contractors, or clients) how much of the budget is assigned to the selected structural elements. 
 
 ## A2d: Scope the Use Code
-![BPMN diagram](diagram.svg)
+![BPMN diagram](IMG/diagram.svg)
 
 ## A2e: Tool idea
 

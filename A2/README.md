@@ -80,7 +80,7 @@ The following information is required:
 
 *- Replacement information:* To define the characteristics of proposed replacement columns, such as dimensions or new material type.
 
-**Where is this information in IFC?** (to be confirmed)
+**Where is this information in IFC?** 
 
 Columns can be identified using `IfcColumn`.
 

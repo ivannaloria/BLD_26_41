@@ -23,9 +23,8 @@ It is intended for future course students with little or no experience in BIM so
 ## Tutorial formats
 
 - **Video (5–6 minutes):** A visual overview of the tools and a demonstration of model exploration and simple queries.
-- **Jupyter notebook:** Step-by-step explanations, simple Python examples, and exercises for independent practice.
+- **Jupyter notebook:** Step by step explanations, simple Python examples, and exercises for independent practice.
 
-**Status:** In preparation. The video and notebook are not yet available.
 
 ## Resources
 

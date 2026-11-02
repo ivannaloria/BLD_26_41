@@ -39,7 +39,7 @@ Every cost estimation starts by knowing what is in the model: which elements exi
 ## Instructions to Run the Tutorial
 1. Clone the repository:
 ```bash
-git clone https://github.com/ivannaloria/BLD_26_41.git
+https://github.com/ivannaloria/BLD_26_41.git
 ```
 
 2. Go to the A3 folder:

@@ -36,10 +36,10 @@ Every cost estimation starts by knowing what is in the model: which elements exi
 
 ## Workflow of the application
 
-## Instructions to Run the Tool
+## Instructions to Run the Tutorial
 1. Clone the repository:
 ```
-git clone [https://github.com/ivannaloria/BLD_26_41.git]
+git clone https://github.com/ivannaloria/BLD_26_41.git
 ```
 
 2. Go to the A3 folder:
@@ -48,11 +48,11 @@ cd BLD_26_41/A3
 ```
 3. Install the dependencies:
 ```
-   pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 4. Open the notebook:
 ```
-   jupyter notebook A3_tutorial.ipynb
+jupyter notebook A3_tutorial.ipynb
 ```
 5. Watch the video and follow the notebook cell by cell.
 

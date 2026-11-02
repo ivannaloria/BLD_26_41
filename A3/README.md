@@ -1,6 +1,6 @@
-Getting Started with IFC Models Using Blender and Python
+**Group 41 DTU 41934**
+# Getting Started with IFC Models Using Blender and Python
 
-**Group 41 · DTU 41934**
 
 ## Summary
 
@@ -10,7 +10,15 @@ A beginner-friendly introduction to exploring IFC models with Blender/Bonsai and
 
 Starting with IFC models can feel overwhelming when BIM software and programming are unfamiliar. The course offers useful explanations and exercises across several pages. Our tutorial aims to bring the first steps together in one accessible starting point, with links to explore further.
 
-It is intended for future course students with little or no experience in BIM software or Python.
+It is intended for future course students with **little or no experience in BIM software or Python.**
+
+## Focus area and BIM use
+**Focus area:** Build
+
+**Bim use:** Cost Estimation
+
+Every cost estimation starts by knowing what is in the model: which elements exist, how may are there and what are their characteristics. This tutorial teaches that first step; learn how to find elements in an IFC model, read their identity (class, Name, GlobalId) and extract quantities, the information a quantity take-off and a cost estimation tool depend on.
+
 
 ## What you will learn
 
@@ -19,6 +27,7 @@ It is intended for future course students with little or no experience in BIM so
 - Select elements and inspect their IFC class, Name, and GlobalId.
 - Open an IFC file using Python and IfcOpenShell.
 - Count elements and extract basic information.
+- Extarct element quantitites as a first step towards cost estimation.
 
 ## Tutorial formats
 

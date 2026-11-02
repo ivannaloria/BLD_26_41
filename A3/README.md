@@ -31,7 +31,7 @@ Every cost estimation starts by knowing what is in the model: which elements exi
 
 ## Tutorial formats
 
-- **Video (5–6 minutes):** A visual overview of the tools and a demonstration of model exploration and simple queries.
+- **Video (5–6 minutes):** A visual overview of the tools and a demonstration of model exploration and simple queries. Watch it here: [link del video].
 - **Jupyter notebook:** Step by step explanations, simple Python examples, and exercises for independent practice. Open it here: [link del notebook].
 
 ## Workflow of the application

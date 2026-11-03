@@ -33,8 +33,8 @@ Every cost estimation starts by knowing what is in the model: which elements exi
 
 ## Tutorial formats
 
-- **Video (5–6 minutes):** A visual overview of the tools and a demonstration of model exploration and simple queries. Watch it here: [link del video].
-- **Jupyter notebook:** Step by step explanations, simple Python examples, and exercises for independent practice. Open it here: [link del notebook].
+- **Video (5–6 minutes):** A visual overview of the tools and a demonstration of model exploration and simple queries.
+- **Jupyter notebook:** Step by step explanations, simple Python examples, and exercises for independent practice.
 
 ## Workflow
 ```mermaid
@@ -87,7 +87,7 @@ You will need:
 
 ## Resources
 
-The tutorial will build on existing materials:
+The tutorial builds on existing materials:
 
 - [IFC concepts](https://timmcginley.github.io/41934/Concepts/IFC.html)
 - [Getting started with Bonsai](https://timmcginley.github.io/41934/Concepts/Bonsai/index.html)

@@ -57,25 +57,31 @@ You will need:
 
 ## Instructions to Run the Tutorial
 
-**Setup:**
-1. Clone the repository:
-```bash
-git clone https://github.com/ivannaloria/BLD_26_41.git
-```
+1. Get the repository (choose one):
+   - **Download ZIP:** on the repository page, click the green **Code** button → **Download ZIP**, and unzip it.
+   - **GitHub Desktop:** File → Clone repository → URL tab → paste `https://github.com/ivannaloria/BLD_26_41.git`
+   - **Git (terminal):**
+     ```bash
+     git clone https://github.com/ivannaloria/BLD_26_41.git
+     ```
 
-2. Go to the A3 folder:
-```
-cd BLD_26_41/A3
-```
+2. Open a terminal inside the A3 folder:
+   ```bash
+   cd BLD_26_41/A3
+   ```
+   Tip: open the A3 folder in File Explorer, click the address bar, copy the path and paste it after `cd`. On Windows, if the folder is on another drive (e.g. Google Drive), use `cd /d "your\path"`.
+
 3. Install the dependencies:
-```
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 4. Open the notebook:
-```
-jupyter notebook A3_tutorial.ipynb
-```
-5. Watch the video and follow the notebook cell by cell.
+   ```bash
+   jupyter notebook A3_tutorial.ipynb
+   ```
+
+5. Watch the video and follow the notebook cell by cell. Run each cell with **Shift + Enter**.
 
 ## Resources
 

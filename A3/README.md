@@ -12,6 +12,9 @@ Starting with IFC models can feel overwhelming when BIM software and programming
 
 It is intended for future course students with **little or no experience in BIM software or Python.**
 
+## Target role and level
+**OpenBIM Analyst - Level 2** The tutorial covers covers inspecting IFC elements and their properties in Bonsai, and writing simple Python scripts with IfcOpenShell to extract the same information.
+
 ## Focus area and BIM use
 **Focus area:** Build
 
@@ -33,8 +36,7 @@ Every cost estimation starts by knowing what is in the model: which elements exi
 - **Video (5–6 minutes):** A visual overview of the tools and a demonstration of model exploration and simple queries. Watch it here: [link del video].
 - **Jupyter notebook:** Step by step explanations, simple Python examples, and exercises for independent practice. Open it here: [link del notebook].
 
-## Workflow of the application
-
+## Workflow
 ```mermaid
 flowchart LR
     A[IFC model] --> B[Blender / Bonsai<br>explore the model visually]

@@ -4,7 +4,7 @@
 
 ## Summary
 
-A beginner-friendly introduction to exploring IFC models with Blender/Bonsai and extracting basic building information using Python and IfcOpenShell. A short video and companion Jupyter notebook will connect the essential concepts with practical examples.
+A beginner-friendly introduction to exploring IFC models with Blender/Bonsai and extracting basic building information using Python and IfcOpenShell. A short video and companion Jupyter notebook connect the essential concepts with practical examples.
 
 ## About the tutorial
 
@@ -15,10 +15,9 @@ It is intended for future course students with **little or no experience in BIM 
 ## Focus area and BIM use
 **Focus area:** Build
 
-**Bim use:** Cost Estimation
+**BIM use:** Cost Estimation
 
-Every cost estimation starts by knowing what is in the model: which elements exist, how may are there and what are their characteristics. This tutorial teaches that first step; learn how to find elements in an IFC model, read their identity (class, Name, GlobalId) and extract quantities, the information a quantity take-off and a cost estimation tool depend on.
-
+Every cost estimation starts by knowing what is in the model: which elements exist, how many there are and what their characteristics are. This tutorial teaches that first step. Students learn how to find elements in an IFC model, read their identity (class, Name, GlobalId) and extract quantities, which is the information a quantity take-off and a cost estimation tool depend on.
 
 ## What you will learn
 
@@ -35,6 +34,16 @@ Every cost estimation starts by knowing what is in the model: which elements exi
 - **Jupyter notebook:** Step by step explanations, simple Python examples, and exercises for independent practice. Open it here: [link del notebook].
 
 ## Workflow of the application
+
+```mermaid
+flowchart LR
+    A[IFC model] --> B[Blender / Bonsai<br>explore the model visually]
+    A --> C[Jupyter notebook<br>Python + IfcOpenShell]
+    B --> D[Understand classes, Name, GlobalId]
+    C --> E[Count elements and extract quantities]
+    D --> E
+    E --> F[Data ready for analysis<br>e.g. cost estimation]
+```
 
 ## Instructions to Run the Tutorial
 

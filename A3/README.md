@@ -45,6 +45,16 @@ flowchart LR
     E --> F[Data ready for analysis<br>e.g. cost estimation]
 ```
 
+## Before you start
+ 
+You will need:
+ 
+- [Python 3](https://www.python.org/downloads/)
+- [Blender](https://www.blender.org/download/) with the [Bonsai](https://timmcginley.github.io/41934/Concepts/Bonsai/index.html) extension
+- [Git](https://git-scm.com/downloads) or [GitHub Desktop](https://desktop.github.com/)
+- The IFC model used in this tutorial
+
+
 ## Instructions to Run the Tutorial
 
 **Setup:**

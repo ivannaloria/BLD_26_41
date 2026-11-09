@@ -113,13 +113,4 @@ The tutorial builds on existing course materials. Links checked on 3 November 20
 - [IfcOpenShell: Hello, world!](https://docs.ifcopenshell.org/ifcopenshell-python/hello_world.html).
 - [Bonsai model exploration guide](https://docs.bonsaibim.org/studio/quickstart/explore_model.html), documentation labelled 0.9.0post1, used for the manual GUI instructions.
 
-## A3 preparation and remaining group work
 
-The [official assignment](https://timmcginley.github.io/41934/Assignments/A3.html) asks for a learning need, objectives, role/level, focus and BIM use, an explicit brief summary, peer testing, and peer feedback. This README and the Jupyter notebook are the two tutorial formats. The README provides setup and context; the notebook contains the explanations, exercises, and visual model walkthrough.
-
-- Confirm the learning need and intended level with the focus area; record the proposing person/group if known. Learning-need owner: **TODO — group to confirm**.
-- Check Exercise 5 in the Blender/Bonsai versions used by your learners. Its instructions incorporate Group 41's walkthrough feedback. Add the requested selected-wall screenshot and record the versions used.
-- Ask a beginner peer to run the notebook from a fresh kernel. Record confusing steps and revise them. Peer test/feedback: **TODO**.
-- Arrange the required focus-area presentation and provide feedback to at least two other groups; retain feedback and reflections for A5.
-
-The code cells have been executed sequentially against the supplied model, and the notebook format has been validated. Code checks do not replace the manual GUI walkthrough or beginner peer test.

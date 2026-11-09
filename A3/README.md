@@ -3,7 +3,7 @@
 
 ## Summary
 
-A beginner-friendly introduction to exploring IFC models with Blender/Bonsai and reading basic building information using Python and IfcOpenShell. A companion Jupyter notebook connects visual model exploration with practical exercises in identifying building elements and their data.
+A beginner-friendly introduction to exploring IFC models with Blender/Bonsai and reading basic building information using Python and IfcOpenShell. The Jupyter notebook guides students through visual model exploration and practical exercises in identifying building elements and their data.
 
 ## About the tutorial: the learning need
 
@@ -30,9 +30,10 @@ Starting with IFC models can feel overwhelming when BIM software and programming
 
 ## Tutorial formats
 
-- **Jupyter notebook:** [A3_tutorial.ipynb](A3_tutorial.ipynb), preserving the group's original open/count/read/try sequence. Exercise 5 connects Python output with a manually selected element in Bonsai, followed by an independent column challenge.
+- **Jupyter notebook:** [A3_tutorial.ipynb](A3_tutorial.ipynb) combines concepts, Python exercises, a step-by-step Blender/Bonsai walkthrough, and an independent column challenge. Exercise 5 connects Python output with a manually selected element in Bonsai.
 - **Markdown README:** setup, scope, model information, and references.
-- **Planned video (5–6 minutes):** a visual overview complementing the notebook. **Video link: TODO — not yet recorded or published.**
+
+Start with the setup instructions below, then follow the notebook from top to bottom. Keep Blender/Bonsai open alongside it for Exercise 5 and use the comparison table to check the selected element.
 
 ## Workflow
 
@@ -114,12 +115,11 @@ The tutorial builds on existing course materials. Links checked on 3 November 20
 
 ## A3 preparation and remaining group work
 
-The [official assignment](https://timmcginley.github.io/41934/Assignments/A3.html) asks for a learning need, objectives, role/level, focus and BIM use, an explicit brief summary, peer testing, and peer feedback. This README and notebook provide two complementary formats; the planned video will add a visual overview.
+The [official assignment](https://timmcginley.github.io/41934/Assignments/A3.html) asks for a learning need, objectives, role/level, focus and BIM use, an explicit brief summary, peer testing, and peer feedback. This README and the Jupyter notebook are the two tutorial formats. The README provides setup and context; the notebook contains the explanations, exercises, and visual model walkthrough.
 
 - Confirm the learning need and intended level with the focus area; record the proposing person/group if known. Learning-need owner: **TODO — group to confirm**.
-- Walk through Exercise 5 in your installed Blender/Bonsai version. Its instructions follow official documentation but have not been tested in a live GUI. Add the requested selected-wall screenshot and record the versions used.
+- Check Exercise 5 in the Blender/Bonsai versions used by your learners. Its instructions incorporate Group 41's walkthrough feedback. Add the requested selected-wall screenshot and record the versions used.
 - Ask a beginner peer to run the notebook from a fresh kernel. Record confusing steps and revise them. Peer test/feedback: **TODO**.
 - Arrange the required focus-area presentation and provide feedback to at least two other groups; retain feedback and reflections for A5.
-- Record the future video, then replace the placeholder with its permanent link. Suggested coverage: tools/context, opening and navigating the model, one short Python query, and matching its GlobalId visually. Leave extended practice in the notebook.
 
 The code cells have been executed sequentially against the supplied model, and the notebook format has been validated. Code checks do not replace the manual GUI walkthrough or beginner peer test.

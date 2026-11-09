@@ -9,8 +9,7 @@ A beginner-friendly introduction to exploring IFC models with Blender/Bonsai and
 
 Starting with IFC models can feel overwhelming when BIM software and programming are unfamiliar. The course offers useful explanations and exercises across several pages. Our tutorial brings the first steps together in one accessible starting point, with links to explore further.
 
-**Target audience:** future BIM Analyst course students with little or no experience in IFC, Blender/Bonsai, Python, or IfcOpenShell. Allow about 30–45 minutes for the notebook after setup.
-
+**Target audience:** future BIM Analyst course students with little or no experience in IFC, Blender/Bonsai, Python, or IfcOpenShell. 
 ## Target role and level
 
 **OpenBIM Analyst — introductory preparation toward Level 2**, retaining the group's chosen role and intended level. The [course role description](https://timmcginley.github.io/41934/Roles/Analyst.html) includes GUI property-set analysis and scripting inside Blender/Bonsai at Level 2. This tutorial teaches earlier foundations: element identities in the GUI and basic Python queries in Jupyter. Completing it alone does not cover the entire Level 2 description.

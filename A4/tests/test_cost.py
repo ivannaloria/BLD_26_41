@@ -37,6 +37,12 @@ class CostTests(unittest.TestCase):
                               pd.DataFrame([self.price if price is None else price]).set_index("category"),
                               self.rules).iloc[0]
 
+    def empty_prices(self):
+        """Keep missing-price tests independent of the editable production rates."""
+        prices = cost.CAPT_PRICES().copy()
+        prices[["price_DKK_per_unit", "demolition_DKK_per_unit"]] = None
+        return prices
+
     def test_expected_concrete_cost(self):
         row = self.calculate()
         self.assertEqual(row.Cost_DKK, 5863.0)
@@ -139,7 +145,8 @@ class CostTests(unittest.TestCase):
             with pd.ExcelFile(source) as book:
                 keep = {name: pd.read_excel(book, sheet_name=name)
                         for name in book.sheet_names if not name.startswith("COST_")}
-            result = cost.analyse(target)
+            with patch.object(cost, "CAPT_PRICES", return_value=self.empty_prices()):
+                result = cost.analyse(target)
             cost.COMM_EXCEL(result, target)
             cost.COMM_EXCEL(result, target)
             with pd.ExcelFile(target) as book:
@@ -152,7 +159,8 @@ class CostTests(unittest.TestCase):
         for source in sorted((ROOT / "examples/team40").glob("*.xlsx")):
             with self.subTest(source=source.name):
                 groups = pd.read_excel(source, sheet_name="Groups")
-                result = cost.analyse(groups)
+                with patch.object(cost, "CAPT_PRICES", return_value=self.empty_prices()):
+                    result = cost.analyse(groups)
                 self.assertEqual([r["GlobalId"] for r in result["groups"]], groups.GlobalId.tolist())
                 self.assertTrue(all(r["Cost_DKK"] is None and r["CostProblem"] for r in result["groups"]))
                 json.dumps(result, allow_nan=False)
@@ -161,8 +169,11 @@ class CostTests(unittest.TestCase):
         inputs = sorted((ROOT / "examples/team40").glob("*.xlsx"))
         before = [hashlib.sha256(path.read_bytes()).digest() for path in inputs]
         with tempfile.TemporaryDirectory() as folder:
+            database = Path(folder) / "empty_prices.xlsx"
+            self.empty_prices().reset_index().to_excel(database, sheet_name="Prices", index=False)
             subprocess.run([sys.executable, str(ROOT / "main.py"), *map(str, inputs),
-                            "--results-dir", folder], check=True, capture_output=True, text=True)
+                            "--database", str(database), "--results-dir", folder],
+                           check=True, capture_output=True, text=True)
             output, = Path(folder).glob("run-*")
             overview = pd.read_excel(output / "project_costs.xlsx", sheet_name="Overview")
             for column in ["Construction DKK (all new groups)", "Demolition DKK (all removed groups)",

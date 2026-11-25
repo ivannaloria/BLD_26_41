@@ -22,10 +22,35 @@ describes rates excluding VAT and certain site overheads. This is a methodology
 reference, not a source of current project rates: confirm exclusions in the actual
 edition and item selected. Do not automatically apply its allowances to this project.
 
-No numeric market rates were entered for this release. Public pages inspected
-did not establish comparable supply-and-install and demolition rates for all
-the shared material categories. No subscription content or assumed prices has
-been substituted.
+The workbook now contains 18 construction and 17 removal reference estimates,
+as explicitly authorised for preliminary analysis. Its `Sources` sheet records
+12 references with direct URLs, locators, dates and limitations. `Rate_basis`
+keeps original quoted figures and all VAT, dimensional and index conversions.
+The original 23 categories and four supported units are retained.
+
+Concrete uses a Molio-derived frame benchmark published by Rambøll (2020).
+Wall rates use Bolius (2024); timber combines Danish retail reference sections
+with Danish-edition NUMIQ placement/dismantling rates. CLT uses a 2019 Einrum
+presentation hosted by Danske Byggeøkonomer, together with the shared density.
+Historical rates are indexed using the official Danmarks Statistik BYG43 total
+series to its latest available quarter, 2026Q2. Current retail/work rates remain
+November 2026 snapshots. This is not a uniform tender-date valuation.
+
+The mapping contains explicit assumptions: the same concrete benchmark is used
+across strength classes; reference sections are scaled by volume; sand-lime and
+blockwork use masonry analogues. VAT exclusion is assumed where the historical
+source is silent. These limitations are recorded per row. All `verified` values
+remain `no`: checking a source does not establish project applicability.
+
+Reinforcement, structural/welded/hollow/light steel and CLT removal remain blank
+because no applicable complete public rate was verified. A material-only quote,
+whole-opening steel budget or complete finished-floor cost is not silently
+substituted for those missing structural rates. Obtain licensed Molio items or
+project quotations before closing these gaps.
+
+Excel formulas have cached numeric values for the Python reader. If inputs in
+`Rate_basis` are edited, recalculate and save the workbook in Excel/LibreOffice
+before running the Python tool; pandas/openpyxl do not calculate Excel formulas.
 
 ## Choose units that fit the rate and quantities
 

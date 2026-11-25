@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-11-25 — Documented Danish reference rates
+
+- Populated 18 construction and 17 removal rates, retaining all 23 shared
+  categories and the original Prices column contract.
+- Added Sources and Rate_basis sheets: direct source URLs, exact locators,
+  source dates, original quotations, VAT and quantity conversions, and formulas.
+- Used public Danish references, including a Rambøll/Molio-derived concrete
+  benchmark, Bolius wall costs, Danish retail timber and Danish-edition NUMIQ
+  labour. Historical rates use official BYG43 index factors to 2026Q2.
+- Marked all rates unverified for project applicability. Documented reference
+  sections, material analogues, source-quarter assumptions and VAT uncertainty.
+  Five steel categories and CLT removal remain unpriced.
+- Kept the calculation modules unchanged. Missing-price tests now use empty
+  temporary fixtures, so filling the editable production database does not
+  invalidate those tests. Checked formula caches and processing of both real
+  Team 40 datasets with the populated workbook.
+
 ## 2026-11-25 — Team 41 cost tool
 
 - Implemented `cost_estimate/src/main.py` from the supplied Team 41 package,

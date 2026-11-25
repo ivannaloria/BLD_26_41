@@ -42,7 +42,10 @@
   {
     "path": "cost_estimate/data/cost_database.xlsx",
     "source": "User-supplied Team41_package actualizado.zip",
-    "sha256": "9496f76ef0f1ec38098be4accdc0daf341a8c3d1684a2e41fb37580317710488"
+    "sha256": "205330cf25c82a258b3a73152873cca5b3479c3eeb4f56f06f2dbd70cb9fb0af",
+    "upstream_template_sha256": "9496f76ef0f1ec38098be4accdc0daf341a8c3d1684a2e41fb37580317710488",
+    "modified": true,
+    "modification": "Team 41 documented reference estimates, Sources and Rate_basis sheets, 2026-11-25. Source facts and assumptions are recorded inside the workbook."
   },
   {
     "path": "examples/changes_example.xlsx",

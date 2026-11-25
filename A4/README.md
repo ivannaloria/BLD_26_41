@@ -15,9 +15,13 @@ budget floor area is not part of this input contract.
 
 The cost module and the two runners are implemented. The material classifier
 and its database are reused from Team 42. Two real Team 40 workbooks are supplied
-as reproducible examples. **The price cells are intentionally still empty:**
-they must be populated with documented, applicable Danish rates before economic
-totals can be used. Empty rates are never interpreted as free work.
+as reproducible examples. **The price database now contains 18 construction and
+17 removal reference estimates**, with sources and calculations in its `Sources`
+and `Rate_basis` sheets. These are documented proxies, not project-verified
+quotations. Five steel categories and CLT removal remain unpriced. Empty rates
+are never interpreted as free work. Historical references are indexed to 2026Q2;
+current retail/work rates are November 2026 snapshots. Read `PRICE_GUIDE.md` and
+the workbook assumptions before interpreting totals.
 
 ## Run the cost analysis from Excel
 
@@ -103,7 +107,7 @@ A4/
   settings.py                     local IFC paths
   cost_estimate/
     src/main.py                   Team 41 implementation
-    data/cost_database.xlsx       supplied 23-category Prices template
+    data/cost_database.xlsx       23-category Prices + Sources + Rate_basis
   embodied_carbon/
     src/main.py                   supplied Team 42 code, unchanged
     data/co2_database.xlsx        Team 42 Rules + Factors, unchanged

@@ -43,6 +43,7 @@ analysis side effects. `analyse()` reads inputs and calculates; only
 `COMM_EXCEL()` writes the cost sheets.
 
 JSON results are saved by `runall.py` under timestamped run folders. Do not write
-files manually in `cost_estimate/results/`. Do not replace shared tests with
-Team 41 tests: run the manager's supplied `tests/test_tool.py` as well once the
-latest shared A4 package is available.
+files manually in `cost_estimate/results/`. The agreed reference is
+`Team41_package actualizado.zip`, also referred to as A4.zip. It contains no
+`tests/test_tool.py`. Team 41's tests do not replace shared tests; if the manager
+later provides an additional shared suite, run it alongside the Team 41 suite.

@@ -180,6 +180,8 @@ Synthetic prices are temporary test fixtures, never production rates.
 
 `HOW_TO_ADD_YOUR_PART.md` explains how to transfer just Team 41's two deliverables
 into the manager's shared folder. `UPSTREAM.json` records the original integration
-snapshots already present in this working copy. The latest `A4.zip` and its
-`tests/test_tool.py` were not supplied; no claim is made that an unseen shared
-test suite has been executed.
+snapshots already present in this working copy. The agreed reference package is
+the supplied `Team41_package actualizado.zip` (also referred to as A4.zip).
+Its runner and Team 42 module remain unchanged. That ZIP contains no
+`tests/test_tool.py`; the executed suite is Team 41's 17 tests, together with
+the full shared-runner integration check.

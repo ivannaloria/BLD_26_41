@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ids:ids xmlns:ids="http://standards.buildingsmart.org/IDS"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://standards.buildingsmart.org/IDS https://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+  <ids:info>
+    <ids:title>Team 41 — material information for structural cost assessment</ids:title>
+    <ids:version>1.0</ids:version>
+    <ids:description>Material assignment check only. Quantities, geometry, exterior-wall scope, matching and rate suitability require separate checks.</ids:description>
+    <ids:date>2026-11-25</ids:date>
+    <ids:purpose>Preliminary cost assessment using Team 40 grouped quantities.</ids:purpose>
+  </ids:info>
+  <ids:specifications>
+    <ids:specification name="Structural elements have a named material" ifcVersion="IFC2X3 IFC4 IFC4X3_ADD2" identifier="T41-MATERIAL">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity>
+          <ids:name>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="IFCBEAM"/>
+              <xs:enumeration value="IFCCOLUMN"/>
+              <xs:enumeration value="IFCSLAB"/>
+              <xs:enumeration value="IFCWALL"/>
+              <xs:enumeration value="IFCWALLSTANDARDCASE"/>
+            </xs:restriction>
+          </ids:name>
+        </ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:material cardinality="required" instructions="Provide a meaningful material name. Separate quantities for material layers before costing.">
+          <ids:value>
+            <xs:restriction base="xs:string"><xs:minLength value="1"/></xs:restriction>
+          </ids:value>
+        </ids:material>
+      </ids:requirements>
+    </ids:specification>
+  </ids:specifications>
+</ids:ids>

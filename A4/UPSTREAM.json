@@ -1,0 +1,52 @@
+[
+  {
+    "path": "embodied_carbon/data/co2_database.xlsx",
+    "source": "https://raw.githubusercontent.com/fabianfgrandizo-cmd/BLD_26_42/4d7f576816f8a070696ee8a436dc8b355dea18b1/A4/embodied_carbon/data/co2_database.xlsx",
+    "sha256": "74a849c8152fb4f8e8d019713bba31aaaf0ae47e793a2fb7b6e963b60cf138e3"
+  },
+  {
+    "path": "project_report/src/main.py",
+    "source": "https://raw.githubusercontent.com/fabianfgrandizo-cmd/BLD_26_42/4d7f576816f8a070696ee8a436dc8b355dea18b1/A4/project_report/src/main.py",
+    "sha256": "d127b5b5a540ebd82ec4341a90d2a4472a4c3dd24b52cbc456d74a5b59c85531"
+  },
+  {
+    "path": "model_changes/src/ifc_to_excel.py",
+    "source": "https://raw.githubusercontent.com/fabianfgrandizo-cmd/BLD_26_42/4d7f576816f8a070696ee8a436dc8b355dea18b1/A4/model_changes/src/ifc_to_excel.py",
+    "sha256": "2f40dd24043682c93055fa0bc5e1c5886495cf330dd5b67d907bfc8aef1ee23f"
+  },
+  {
+    "path": "model_changes/src/team40.py",
+    "source": "https://raw.githubusercontent.com/ANANDO02/BLD_26_40/a7ff554a0e13005d38afbd0b66dae7f2fb91762f/A4/main.py",
+    "sha256": "75c03ee9ab753d23016b5406c153d213953d0fa7f84d940ae5aa1effd35171dd"
+  },
+  {
+    "path": "examples/team40/changes_26-06-D-STR.xlsx",
+    "source": "https://raw.githubusercontent.com/ANANDO02/BLD_26_40/a7ff554a0e13005d38afbd0b66dae7f2fb91762f/A4/output/changes_26-06-D-STR.xlsx",
+    "sha256": "d83a87d717d5c2b8e6876f6840d3a66e628a1c2f69b60231f242b30a19c35728"
+  },
+  {
+    "path": "examples/team40/changes_26-09-D-STR.xlsx",
+    "source": "https://raw.githubusercontent.com/ANANDO02/BLD_26_40/a7ff554a0e13005d38afbd0b66dae7f2fb91762f/A4/output/changes_26-09-D-STR.xlsx",
+    "sha256": "2fde27d298df61f2c18a63a1aa4b09089e728940df3c1b29923a98425e18a661"
+  },
+  {
+    "path": "embodied_carbon/src/main.py",
+    "source": "User-supplied Team41_package actualizado.zip",
+    "sha256": "a04fa21a6e2e597c9ccce54b925c42e3323ad30d7b4324ffd32cbe4fca033d05"
+  },
+  {
+    "path": "runall.py",
+    "source": "User-supplied Team41_package actualizado.zip",
+    "sha256": "4671f7c21dfa779bda51ce2fa0cc3245fbd85215cc9b005c120623f0ea180b51"
+  },
+  {
+    "path": "cost_estimate/data/cost_database.xlsx",
+    "source": "User-supplied Team41_package actualizado.zip",
+    "sha256": "9496f76ef0f1ec38098be4accdc0daf341a8c3d1684a2e41fb37580317710488"
+  },
+  {
+    "path": "examples/changes_example.xlsx",
+    "source": "User-supplied Team41_package actualizado.zip",
+    "sha256": "c8f5fa443749d0ee098f0b59ad29cd457f244d98cb223b60002c0e9e77dc0335"
+  }
+]

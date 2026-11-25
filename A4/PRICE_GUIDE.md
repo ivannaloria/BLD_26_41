@@ -26,7 +26,8 @@ The workbook now contains 18 construction and 17 removal reference estimates,
 as explicitly authorised for preliminary analysis. Its `Sources` sheet records
 12 references with direct URLs, locators, dates and limitations. `Rate_basis`
 keeps original quoted figures and all VAT, dimensional and index conversions.
-The original 23 categories and four supported units are retained.
+`Category_notes` records the assumptions for each category. `Prices` keeps
+exactly the six shared columns; the original 23 category names are retained.
 
 Concrete uses a Molio-derived frame benchmark published by Rambøll (2020).
 Wall rates use Bolius (2024); timber combines Danish retail reference sections
@@ -84,16 +85,17 @@ Required columns remain:
   demolition separately when they come from different sources.
 - `verified`: `yes` only after the team has checked units, scope and provenance.
 
-Useful optional columns include `construction_source`, `demolition_source`,
-`price_year`, `vat_basis`, `location`, `included_work` and `excluded_work`.
-The code carries the shared `source` and `verified` into the results and flags
-missing sources/unverified values as price warnings. It can restrict a rate
-using optional `ifc_class` and `type_name` columns with exact values.
+Keep source dates, VAT basis, location, included/excluded work and category
+assumptions in the separate `Category_notes` sheet, never as extra `Prices`
+columns. The shared output remains four fields per group; the summary reports
+the number of groups calculated with unverified/missing-source rates.
 
 Use a consistent year, geographical basis and VAT treatment for option
 comparisons. Do not label results “excluding VAT” unless all used rates have
 been checked on that basis. The module does not adjust inflation, exchange
-rates, VAT, contingencies, salvage credits or overheads.
+rates, VAT, contingencies, salvage credits or overheads. The workbook formulas
+perform the explicitly documented historical index and VAT conversions before
+the module reads the resulting unit prices.
 
 For demolition, establish whether the quote covers dismantling, temporary
 support, loading, transport, waste fees and hazardous materials. For new work,

@@ -18,14 +18,15 @@ HERE = Path(__file__).resolve().parents[1]
 COST_DATABASE = HERE / "data" / "cost_database.xlsx"
 UNIT_TO_COLUMN = {"m3": "Volume_m3", "m2": "Area_m2", "m": "Length_m", "pcs": "Count"}
 REQUIRED = ["GlobalId", "Status", "Material", "Count", "Length_m", "Area_m2", "Volume_m3"]
-RESULT_COLUMNS = [
+RESULT_COLUMNS = ["GlobalId", "CostCategory", "Cost_DKK", "CostProblem"]
+DETAIL_COLUMNS = [
     "GlobalId", "Status", "IfcClass", "Material", "TypeName", "CostCategory",
     "CostUnit", "CostQuantity", "UnitPrice_DKK", "Cost_DKK", "CostProblem",
     "CostSource", "PriceVerified", "MatchedBy", "CostWarning",
 ]
 
 
-def records(df):
+def COMM_RECORDS(df):
     """Return JSON-compatible records, including None for missing values."""
     return json.loads(df.to_json(orient="records", double_precision=15))
 
@@ -50,10 +51,9 @@ def CAPT_GROUPS(source, sheet="Groups"):
 def CAPT_PRICES(path=COST_DATABASE):
     """Read category prices. Ambiguous duplicate categories are rejected per group."""
     prices = pd.read_excel(path, sheet_name="Prices")
-    required = {"category", "unit", "price_DKK_per_unit", "demolition_DKK_per_unit"}
-    missing = required.difference(prices.columns)
-    if missing:
-        raise ValueError("Prices sheet missing columns: " + ", ".join(sorted(missing)))
+    required = ["category", "unit", "price_DKK_per_unit", "demolition_DKK_per_unit", "source", "verified"]
+    if list(prices.columns) != required:
+        raise ValueError("Prices must have exactly these columns, in order: " + ", ".join(required))
     return prices.set_index("category")
 
 
@@ -74,13 +74,13 @@ def CALC_COST(groups, prices, rules, unit_to_column=UNIT_TO_COLUMN):
     """PRIMARY C function: quantity times construction or demolition unit price.
 
     Keep one record per input group, in order. Unresolved costs remain None.
-    Optional price columns ifc_class/type_name restrict a rate's applicability.
+    Detailed values stay internal; analyse() returns the four shared group keys.
     """
     rows = []
     for _, group in groups.iterrows():
         category, reason = CONN_MATERIAL(group["Material"], rules)
         status = group["Status"]
-        row = {column: None for column in RESULT_COLUMNS}
+        row = {column: None for column in DETAIL_COLUMNS}
         row.update({column: group.get(column) for column in
                     ["GlobalId", "Status", "IfcClass", "Material", "TypeName"]})
         row.update(CostCategory=category, MatchedBy=reason)
@@ -120,26 +120,20 @@ def CALC_COST(groups, prices, rules, unit_to_column=UNIT_TO_COLUMN):
             elif unit == "m3" and (CHEK_NUMBER(group.get("ElementsWithoutVolume")) or 0) > 0:
                 problem = "incomplete volume - some elements lack volume"
             else:
-                for scope, key in [("ifc_class", "IfcClass"), ("type_name", "TypeName")]:
-                    expected = price_row.get(scope)
-                    if pd.notna(expected) and str(expected).strip() and str(expected) != str(group.get(key)):
-                        problem = f"price scope does not match {key}"
-                        break
-                if problem is None:
-                    amount = price * quantity
-                    if CHEK_NUMBER(amount) is None:
-                        problem = "cost exceeds numeric range"
-                    else:
-                        row["Cost_DKK"] = float(round(amount))
-                        warnings = []
-                        if str(price_row.get("verified", "")).strip().lower() != "yes":
-                            warnings.append("price not verified")
-                        if pd.isna(price_row.get("source")) or not str(price_row.get("source", "")).strip():
-                            warnings.append("price source missing")
-                        row["CostWarning"] = "; ".join(warnings) or None
+                amount = price * quantity
+                if CHEK_NUMBER(amount) is None:
+                    problem = "cost exceeds numeric range"
+                else:
+                    row["Cost_DKK"] = float(round(amount))
+                    warnings = []
+                    if str(price_row.get("verified", "")).strip().lower() != "yes":
+                        warnings.append("price not verified")
+                    if pd.isna(price_row.get("source")) or not str(price_row.get("source", "")).strip():
+                        warnings.append("price source missing")
+                    row["CostWarning"] = "; ".join(warnings) or None
         row["CostProblem"] = problem
         rows.append(row)
-    return pd.DataFrame(rows, columns=RESULT_COLUMNS)
+    return pd.DataFrame(rows, columns=DETAIL_COLUMNS)
 
 
 def CHEK_COST(result):
@@ -206,7 +200,7 @@ def analyse(groups, database=COST_DATABASE):
     """Return JSON-compatible costs and totals; never print, write or open IFCs."""
     table = CAPT_GROUPS(groups)
     if table.empty:
-        result = pd.DataFrame(columns=RESULT_COLUMNS)
+        result = pd.DataFrame(columns=DETAIL_COLUMNS)
     else:
         prices = CAPT_PRICES(database)
         rules, _ = CAPT_CO2DATA()
@@ -217,7 +211,7 @@ def analyse(groups, database=COST_DATABASE):
     return {
         "total_new_DKK": float(amounts.where(result["Status"].eq("new")).sum()),
         "total_removed_DKK": float(amounts.where(result["Status"].eq("removed")).sum()),
-        "groups": records(result), "summary": records(summary),
+        "groups": COMM_RECORDS(result[RESULT_COLUMNS]), "summary": COMM_RECORDS(summary),
     }
 
 

@@ -101,10 +101,15 @@ class CostTests(unittest.TestCase):
         self.assertIn("material/section conflict", row.CostProblem)
         self.assertIsNone(self.calculate({**self.group, "ElementsWithoutVolume": 1}).Cost_DKK)
 
-    def test_optional_price_scope(self):
-        row = self.calculate(price={**self.price, "ifc_class": "IfcSlab"})
-        self.assertIsNone(row.Cost_DKK)
-        self.assertEqual(row.CostProblem, "price scope does not match IfcClass")
+    def test_price_schema_is_exactly_the_shared_six_columns(self):
+        expected = ["unit", "price_DKK_per_unit", "demolition_DKK_per_unit", "source", "verified"]
+        self.assertEqual(cost.CAPT_PRICES().columns.tolist(), expected)
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "wrong_schema.xlsx"
+            pd.DataFrame([{**self.price, "extra_column": "not allowed"}]).to_excel(
+                path, sheet_name="Prices", index=False)
+            with self.assertRaisesRegex(ValueError, "exactly these columns"):
+                cost.CAPT_PRICES(path)
 
     def test_duplicate_or_missing_ids_rejected(self):
         for groups in [[self.group, self.group], [{**self.group, "GlobalId": None}]]:
@@ -135,6 +140,9 @@ class CostTests(unittest.TestCase):
             self.assertEqual(result["total_removed_DKK"], 0)
             self.assertEqual(result["groups"][1]["Cost_DKK"], 5863)
             self.assertIsNone(result["groups"][0]["Cost_DKK"])
+            self.assertEqual(set(result), {"groups", "summary", "total_new_DKK", "total_removed_DKK"})
+            for group in result["groups"]:
+                self.assertEqual(set(group), {"GlobalId", "CostCategory", "Cost_DKK", "CostProblem"})
             json.dumps(result, allow_nan=False)
 
     def test_excel_preservation_and_repeated_write(self):
@@ -165,27 +173,38 @@ class CostTests(unittest.TestCase):
                 self.assertTrue(all(r["Cost_DKK"] is None and r["CostProblem"] for r in result["groups"]))
                 json.dumps(result, allow_nan=False)
 
-    def test_cost_only_runner_keeps_inputs_and_blank_full_totals(self):
-        inputs = sorted((ROOT / "examples/team40").glob("*.xlsx"))
-        before = [hashlib.sha256(path.read_bytes()).digest() for path in inputs]
+    def test_module_command_writes_only_cost_sheets_to_working_copy(self):
+        source = ROOT / "examples/changes_example.xlsx"
+        before = hashlib.sha256(source.read_bytes()).digest()
         with tempfile.TemporaryDirectory() as folder:
-            database = Path(folder) / "empty_prices.xlsx"
-            self.empty_prices().reset_index().to_excel(database, sheet_name="Prices", index=False)
-            subprocess.run([sys.executable, str(ROOT / "main.py"), *map(str, inputs),
-                            "--database", str(database), "--results-dir", folder],
-                           check=True, capture_output=True, text=True)
-            output, = Path(folder).glob("run-*")
-            overview = pd.read_excel(output / "project_costs.xlsx", sheet_name="Overview")
-            for column in ["Construction DKK (all new groups)", "Demolition DKK (all removed groups)",
-                           "Total DKK (all received groups)"]:
-                self.assertTrue(overview[column].isna().all())
-            self.assertEqual(overview["Groups with problems"].tolist(), [165, 154])
-            self.assertEqual(len(pd.read_excel(output / "project_costs.xlsx", sheet_name="Manual review")), 319)
-            for path in inputs:
-                with pd.ExcelFile(output / path.name) as book:
-                    self.assertTrue({"Groups", "Elements", "Info", "Matches", "NetQuantities", "Review",
-                                     "COST_Summary", "COST_Groups", "COST_Problems"}.issubset(book.sheet_names))
-        self.assertEqual([hashlib.sha256(path.read_bytes()).digest() for path in inputs], before)
+            target = Path(folder) / "working_copy.xlsx"
+            shutil.copy2(source, target)
+            subprocess.run([sys.executable, "-m", "cost_estimate.src.main", str(target)],
+                           cwd=ROOT, check=True, capture_output=True, text=True)
+            with pd.ExcelFile(source) as original, pd.ExcelFile(target) as output:
+                for name in original.sheet_names:
+                    if not name.startswith("COST_"):
+                        pd.testing.assert_frame_equal(pd.read_excel(original, sheet_name=name),
+                                                      pd.read_excel(output, sheet_name=name))
+                groups = pd.read_excel(output, sheet_name="COST_Groups")
+                self.assertEqual(groups.columns.tolist(), cost.RESULT_COLUMNS)
+                self.assertEqual(len(groups), 3)
+        self.assertEqual(hashlib.sha256(source.read_bytes()).digest(), before)
+
+    def test_import_does_not_read_data_or_write_results(self):
+        program = """
+from unittest.mock import patch
+import pandas as pd
+import embodied_carbon.src.main as carbon
+with patch.object(pd, 'read_excel', side_effect=AssertionError('read on import')), \\
+     patch.object(pd, 'ExcelWriter', side_effect=AssertionError('write on import')), \\
+     patch.object(carbon, 'CAPT_CO2DATA', side_effect=AssertionError('classify on import')):
+    import cost_estimate.src.main
+"""
+        result = subprocess.run([sys.executable, "-c", program], cwd=ROOT,
+                                check=True, capture_output=True, text=True)
+        self.assertEqual(result.stdout, "")
+        self.assertEqual(result.stderr, "")
 
 
 if __name__ == "__main__":
